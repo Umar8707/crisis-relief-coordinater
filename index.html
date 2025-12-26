@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pakistan Railway</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <header class="bg-green-800 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Pakistan Railway</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="#" onclick="highlightSection('home')" class="hover:underline">Home</a></li>
+          <li><a href="#schedule" onclick="highlightSection('schedule')" class="hover:underline">Train Schedule</a></li>
+          <li><a href="#booking" onclick="highlightSection('booking')" class="hover:underline">Online Booking</a></li>
+          <li><a href="#contact" onclick="highlightSection('contact')" class="hover:underline">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="bg-white py-10">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-semibold mb-4">Welcome to Pakistan Railway</h2>
+      <p class="text-gray-700">Travel safely and comfortably across Pakistan with our trusted railway service.</p>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Pakistan_Railways_train.jpg" alt="Train 1" class="rounded shadow">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Pakistan_Railways_Coach.jpg" alt="Train 2" class="rounded shadow">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Pakistan_Railways_train_Karachi.jpg" alt="Train 3" class="rounded shadow">
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule" class="py-10">
+    <div class="container mx-auto">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-2xl font-bold">Train Schedule</h3>
+        <button onclick="toggleSchedule()" class="bg-green-700 text-white px-4 py-2 rounded">Toggle Schedule</button>
+      </div>
+      <table id="schedule-table" class="min-w-full table-auto bg-white shadow rounded-lg">
+        <thead>
+          <tr class="bg-green-700 text-white">
+            <th class="px-4 py-2">Train</th>
+            <th class="px-4 py-2">From</th>
+            <th class="px-4 py-2">To</th>
+            <th class="px-4 py-2">Departure</th>
+            <th class="px-4 py-2">Arrival</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="text-center">
+            <td class="border px-4 py-2">Green Line</td>
+            <td class="border px-4 py-2">Karachi</td>
+            <td class="border px-4 py-2">Islamabad</td>
+            <td class="border px-4 py-2">08:00 AM</td>
+            <td class="border px-4 py-2">08:00 PM</td>
+          </tr>
+          <tr class="text-center">
+            <td class="border px-4 py-2">Khyber Mail</td>
+            <td class="border px-4 py-2">Karachi</td>
+            <td class="border px-4 py-2">Peshawar</td>
+            <td class="border px-4 py-2">10:00 AM</td>
+            <td class="border px-4 py-2">06:00 AM</td>
+          </tr>
+          <tr class="text-center">
+            <td class="border px-4 py-2">Awam Express</td>
+            <td class="border px-4 py-2">Lahore</td>
+            <td class="border px-4 py-2">Karachi</td>
+            <td class="border px-4 py-2">06:00 PM</td>
+            <td class="border px-4 py-2">12:00 PM (next day)</td>
+          </tr>
+          <tr class="text-center">
+            <td class="border px-4 py-2">Tezgam</td>
+            <td class="border px-4 py-2">Rawalpindi</td>
+            <td class="border px-4 py-2">Karachi</td>
+            <td class="border px-4 py-2">07:00 AM</td>
+            <td class="border px-4 py-2">06:00 AM (next day)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="booking" class="bg-white py-10">
+    <div class="container mx-auto">
+      <h3 class="text-2xl font-bold mb-4">Online Booking</h3>
+      <form onsubmit="return validateBookingForm()" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input id="name" type="text" placeholder="Full Name" class="p-2 border rounded" required>
+        <input id="email" type="email" placeholder="Email Address" class="p-2 border rounded" required>
+        <input type="text" placeholder="From" class="p-2 border rounded">
+        <input type="text" placeholder="To" class="p-2 border rounded">
+        <input id="travel-date" type="date" class="p-2 border rounded">
+        <button type="submit" class="bg-green-700 text-white p-2 rounded hover:bg-green-800 md:col-span-2">Book Now</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="contact" class="py-10">
+    <div class="container mx-auto">
+      <h3 class="text-2xl font-bold mb-4">Contact Us</h3>
+      <p>Email: support@pakrailway.pk</p>
+      <p>Phone: 042-111-000-111</p>
+      <p>Address: Headquarters Office, Lahore, Pakistan</p>
+      <p>Office Hours: Mon-Fri, 9AM - 5PM</p>
+    </div>
+  </section>
+
+  <footer class="bg-green-800 text-white text-center py-4 mt-10">
+    <p>&copy; 2025 Pakistan Railway. All rights reserved.</p>
+  </footer>
+</body>
+</html>
